@@ -18,6 +18,7 @@ package com.materialstudies.reply.ui.compose
 
 import android.graphics.Color
 import android.os.Bundle
+import android.transition.Slide
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,7 +27,6 @@ import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import androidx.transition.Slide
 import com.google.android.material.transition.platform.MaterialContainerTransform
 import com.materialstudies.reply.R
 import com.materialstudies.reply.data.Account

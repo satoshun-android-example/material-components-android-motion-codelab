@@ -29,6 +29,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.ItemTouchHelper
 import com.google.android.material.transition.MaterialElevationScale
+import com.google.android.material.transition.MaterialFadeThrough
 import com.materialstudies.reply.R
 import com.materialstudies.reply.data.Email
 import com.materialstudies.reply.data.EmailStore
@@ -65,6 +66,9 @@ class HomeFragment : Fragment(), EmailAdapter.EmailAdapterListener {
             duration = resources.getInteger(R.integer.reply_motion_duration_large).toLong()
         }
         reenterTransition = MaterialElevationScale(true).apply {
+            duration = resources.getInteger(R.integer.reply_motion_duration_large).toLong()
+        }
+        enterTransition = MaterialFadeThrough().apply {
             duration = resources.getInteger(R.integer.reply_motion_duration_large).toLong()
         }
     }

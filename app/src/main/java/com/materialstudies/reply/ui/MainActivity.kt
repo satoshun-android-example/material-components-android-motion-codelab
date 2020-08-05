@@ -30,6 +30,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
+import com.google.android.material.transition.MaterialFadeThrough
 import com.google.android.material.transition.platform.MaterialElevationScale
 import com.google.android.material.transition.platform.MaterialSharedAxis
 import com.materialstudies.reply.R
@@ -264,7 +265,11 @@ class MainActivity : AppCompatActivity(),
 
     fun navigateToHome(@StringRes titleRes: Int, mailbox: Mailbox) {
         binding.bottomAppBarTitle.text = getString(titleRes)
-        // TODO: Set up MaterialFadeThrough transition as exit transition.
+        currentNavigationFragment?.apply {
+            exitTransition = MaterialFadeThrough().apply {
+                duration = resources.getInteger(R.integer.reply_motion_duration_large).toLong()
+            }
+        }
         val directions = HomeFragmentDirections.actionGlobalHomeFragment(mailbox)
         findNavController(R.id.nav_host_fragment).navigate(directions)
     }
